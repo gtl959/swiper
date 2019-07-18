@@ -35,7 +35,7 @@ def upload_avatar_to_qcy(file_addr,file_name):
     return True if info.status_code == 200 else False
 
 
-#
+#celery_app装饰器，被装饰后可以通过celery进程进行异步执行，在django需要配置文件worker
 @celery_app.task
 def celery_upload_to_qcy(file,file_name,user):
 
